@@ -159,6 +159,37 @@ def test_reverse_dns_loopback():
     assert isinstance(name, str)  # usually 'localhost', '' is acceptable
 
 
+def test_scan_host_skips_rdns_when_no_open_ports(monkeypatch):
+    calls = []
+
+    def fake_rdns(ip):
+        calls.append(ip)
+        return "x"
+
+    monkeypatch.setattr(scanner, "reverse_dns", fake_rdns)
+    srv, port = start_tcp_server()
+    srv.shutdown()
+    srv.server_close()
+    r = scanner.scan_host("127.0.0.1", [port], 0.5, 10)
+    assert r["open_ports"] == []
+    assert r["hostname"] == ""
+    assert calls == []
+
+
+def test_scan_host_rdns_when_open_ports(monkeypatch):
+    calls = []
+    monkeypatch.setattr(scanner, "reverse_dns",
+                        lambda ip: calls.append(ip) or "deadbeef")
+    srv, port = start_tcp_server()
+    try:
+        r = scanner.scan_host("127.0.0.1", [port], 1.0, 10)
+        assert len(r["open_ports"]) == 1
+        assert r["hostname"] == "deadbeef"
+        assert calls == ["127.0.0.1"]
+    finally:
+        srv.shutdown()
+
+
 # ---------------------------------------------------------------- outputs
 
 def _sample_results():

@@ -191,8 +191,11 @@ def scan_host(ip, ports, timeout, workers, progress=None):
             if result is not None:
                 open_ports.append(result)
     open_ports.sort(key=lambda r: r["port"])
+    # Reverse-DNS only hosts worth naming: a lookup against a dead host can
+    # stall for seconds on DNS timeouts, which would serialize a subnet sweep.
+    hostname = reverse_dns(ip) if open_ports else ""
     return {"host": ip,
-            "hostname": reverse_dns(ip),
+            "hostname": hostname,
             "open_ports": open_ports}
 
 
