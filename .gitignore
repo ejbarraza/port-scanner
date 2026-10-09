@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+port-scan-*.html
+scan.json
+scan.csv
