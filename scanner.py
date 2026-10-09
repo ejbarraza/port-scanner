@@ -173,7 +173,14 @@ class Progress:
 
 
 def scan_host(ip, ports, timeout, workers, progress=None):
-    """Scan one host; return a result dict."""
+    """Scan one host; return a result dict.
+
+    On Ctrl+C the pending probes are cancelled instead of drained: the
+    executor's normal shutdown(wait=True) would block until every queued
+    probe finished, which turns an interrupt into a very long wait.
+    In-flight probes (at most `workers` of them) still run to their
+    timeout, so exit follows within ~timeout seconds.
+    """
     open_ports = []
 
     def work(port):
@@ -186,10 +193,20 @@ def scan_host(ip, ports, timeout, workers, progress=None):
                 "service": SERVICE_NAMES.get(port, ""),
                 "banner": banner}
 
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        for result in pool.map(work, ports):
+    pool = ThreadPoolExecutor(max_workers=workers)
+    futures = []
+    try:
+        futures = [pool.submit(work, port) for port in ports]
+        for fut in futures:
+            result = fut.result()
             if result is not None:
                 open_ports.append(result)
+    except KeyboardInterrupt:
+        for fut in futures:
+            fut.cancel()
+        raise
+    finally:
+        pool.shutdown(wait=False, cancel_futures=True)
     open_ports.sort(key=lambda r: r["port"])
     # Reverse-DNS only hosts worth naming: a lookup against a dead host can
     # stall for seconds on DNS timeouts, which would serialize a subnet sweep.
