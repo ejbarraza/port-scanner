@@ -7,6 +7,10 @@ as text, JSON, CSV, or a styled HTML page.
 Zero third-party dependencies: just the standard library. No root required
 (plain TCP connect scans, no raw sockets).
 
+> 📄 **Hiring managers:** [IT Projects one-pager (PDF)](docs/it-projects-one-pager.pdf) —
+> this project plus the homelab network audit and 21 documented Windows 11
+> administration labs, in a one-page resume-ready summary.
+
 ## Features
 
 - **TCP connect scanning** — threaded for speed (200 parallel probes by default)
