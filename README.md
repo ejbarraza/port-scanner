@@ -8,8 +8,8 @@ Zero third-party dependencies: just the standard library. No root required
 (plain TCP connect scans, no raw sockets).
 
 > 📄 [IT Projects one-pager (PDF)](docs/it-projects-one-pager.pdf) —
-> this project plus the homelab network audit and 21 documented Windows 11
-> administration labs.
+> this project plus the homelab network audit, 31 documented Windows 11
+> administration walkthroughs, and CIS-27 cybersecurity lab work.
 
 ## Features
 
@@ -73,7 +73,7 @@ network said.
 
 ```
 scanner.py              # the whole scanner (stdlib only)
-tests/test_scanner.py   # 23 tests, loopback-only, no external network
+tests/test_scanner.py   # 25 tests, loopback-only, no external network
 ```
 
 Run the tests with:

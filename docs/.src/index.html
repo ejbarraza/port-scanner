@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erick Barraza — IT Projects One-Pager</title>
+<style>
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+body { margin: 0; font-family: 'Liberation Sans', 'Noto Sans', sans-serif; color: #1c3557; }
+.page { min-height: 11in; padding: 0.5in 0.85in 0.5in; }
+section { display: flow-root; break-inside: avoid; page-break-inside: avoid; }
+h1 { font-family: 'Liberation Serif', 'Noto Serif', serif; font-size: 28pt; line-height: 1.1; margin: 0; color: #1c3557; }
+.subtitle { font-size: 10.5pt; color: #33475f; margin: 5pt 0 0; }
+.github { font-size: 9.5pt; margin: 3pt 0 0; letter-spacing: 0.5pt; }
+.github .label { color: #8a94a6; letter-spacing: 1.5pt; }
+.github a { color: #2b5a8a; text-decoration: none; }
+.rule { border: none; border-top: 2.5pt solid #1c3557; margin: 10pt 0 0; }
+.sec { margin-top: 6pt; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+.sec-head h2 { font-family: 'Liberation Serif', 'Noto Serif', serif; font-size: 13pt; margin: 0; color: #1c3557; }
+.pill { background: #1f3a5f; color: #ffffff; font-family: 'Liberation Sans', 'Noto Sans', sans-serif; font-size: 8pt; font-weight: 700; letter-spacing: 1.2pt; padding: 3.5pt 8pt; border-radius: 2pt; white-space: nowrap; }
+.link { font-size: 10pt; color: #2b5a8a; margin: 3pt 0 5pt; }
+p { font-size: 10pt; line-height: 1.35; margin: 0 0 4pt; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { font-size: 10pt; line-height: 1.35; padding-left: 16pt; position: relative; margin-bottom: 2pt; }
+li::before { content: "\2013"; position: absolute; left: 0; }
+li b { font-weight: 700; }
+.tech { margin-top: 10pt; border-top: 1pt solid #c9d2dd; padding-top: 6pt; }
+.tech-label { font-size: 9pt; letter-spacing: 2pt; color: #5a6b80; margin: 0 0 7pt; }
+.chip { display: inline-block; border: 1pt solid #c9d2dd; background: #f4f6f9; border-radius: 3pt; padding: 2.5pt 9pt; font-size: 9.5pt; margin: 0 4pt 5pt 0; }
+.footer { font-size: 10pt; color: #33475f; margin-top: 8pt; }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>Erick Barraza</h1>
+<p class="subtitle">IT projects — network tooling, subnet auditing, Windows 11 administration, and cybersecurity lab work</p>
+<p class="github"><span class="label">GITHUB</span> <a href="https://github.com/ejbarraza">github.com/ejbarraza</a></p>
+<hr class="rule">
+
+<section class="sec">
+<div class="sec-head"><h2>1&nbsp;&nbsp;Network Port Scanner</h2><span class="pill">OPEN SOURCE</span></div>
+<p class="link">github.com/ejbarraza/port-scanner</p>
+<p>A dependency-free Python TCP port scanner built only on the standard library: threaded scanning, CIDR target support, quick / full / custom port profiles, banner grabbing and reverse DNS, with reports in text, JSON, CSV, and HTML.</p>
+<ul>
+<li>Backed by 25 pytest tests, with GitHub Actions CI running the suite across Python 3.10–3.12.</li>
+<li>Field-tested on a live subnet: found and fixed two real defects — a reverse-DNS stall on dead hosts and a Ctrl+C path that drained the probe queue — each covered by a regression test.</li>
+</ul>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>2&nbsp;&nbsp;Virtual Lab Network Audit</h2><span class="pill">HOMELAB</span></div>
+<p class="link">Findings: github.com/ejbarraza/port-scanner/tree/main/docs/lab-findings</p>
+<p>Applied the scanner to a full VirtualBox NAT subnet (10.0.2.0/24, 254 hosts) from a Windows 11 VM, sweeping every address in under five minutes.</p>
+<ul>
+<li>Mapped 7 open ports across the subnet, including SMB (445) and MSRPC (135), and documented what each exposed service is.</li>
+<li>Recorded per-service remediation notes — whether each port should be exposed and how to close or restrict it.</li>
+</ul>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>3&nbsp;&nbsp;Windows 11 System Administration Lab</h2><span class="pill">HOMELAB · 31 SCREENSHOTS</span></div>
+<p>Built and administered a Windows 11 (64-bit) VirtualBox VM — 80 GB GPT disk, NAT networking — across 31 screenshot-documented walkthroughs.</p>
+<ul>
+<li><b>Networking:</b> TCP/IP configuration, adapter identification and enable/disable, active-connection and Wi-Fi inspection, ping testing (0% packet loss), and break/fix troubleshooting.</li>
+<li><b>Storage:</b> disk initialization and volume creation in Disk Management and DiskPart, including a 2 GB virtual hard disk (VHD).</li>
+<li><b>Devices &amp; hardware:</b> Device Manager driver verification, printer installation, and I/O device configuration (keyboard, mouse, display, audio).</li>
+</ul>
+</section>
+
+<section class="sec">
+<div class="sec-head"><h2>4&nbsp;&nbsp;CIS-27 Cybersecurity Lab Work</h2><span class="pill">COURSEWORK</span></div>
+<p class="link">Summary: github.com/ejbarraza/port-scanner/tree/main/docs/lab-findings/cis-27</p>
+<p>TestOut LabSim coursework, Chapters 2–5 plus midterm topics, documented as a topic summary.</p>
+<ul>
+<li><b>Identity &amp; access:</b> AD OUs, users, groups; Group Policy (password/lockout, UAC, smart-card logon); local users/groups.</li>
+<li><b>Encryption &amp; trust:</b> EFS, BitLocker + TPM, CA lifecycle, file-hash integrity, steganography.</li>
+<li><b>Network &amp; Linux:</b> pfSense firewall rules, DMZ subnet, OpenVPN + IPSec; Linux user/group admin.</li>
+</ul>
+</section>
+
+<div class="tech">
+<p class="tech-label">TECHNOLOGIES EXERCISED</p>
+<span class="chip">Python (stdlib)</span><span class="chip">pytest</span><span class="chip">GitHub Actions CI</span><span class="chip">Windows 11</span><span class="chip">VirtualBox</span><span class="chip">TCP/IP &amp; DNS</span><span class="chip">DiskPart</span><span class="chip">Device Manager</span><span class="chip">Active Directory</span><span class="chip">Group Policy</span><span class="chip">pfSense</span><span class="chip">Linux</span>
+</div>
+
+<p class="footer">Full lab documentation and scanner source are on GitHub; happy to walk through any of it in an interview.</p>
+</div>
+</body>
+</html>
