@@ -26,7 +26,7 @@ findings, 3 partial (interrupted) results.
 
 Only scan hosts and networks you own or have explicit permission to test.
 Non-loopback targets require a scope confirmation (or --yes), and every
-run is appended to a hash-chained journal.
+run is appended to a hash-chained journal. Built for authorized engagements.
 """
 
 import argparse

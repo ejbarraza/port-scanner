@@ -156,8 +156,8 @@ python3 -m venv .venv && .venv/bin/pip install pytest
 
 Only scan hosts and networks you own or have explicit written permission to
 test. Unauthorized scanning can violate computer-misuse law and your ISP's
-terms of service. This tool is built for learning, homelabs, and authorized
-audits — the way you'd use it in an IT networking course.
+terms of service. This tool is built for authorized engagements —
+learning, homelabs, and the way you'd use it in an IT networking course.
 
 ## License
 
