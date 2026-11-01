@@ -14,7 +14,7 @@ every report ships with a chain-of-custody manifest. Say "not detected in
 N attempts", never "absent".
 
 > 📄 [IT Projects one-pager (PDF)](docs/it-projects-one-pager.pdf) —
-> this project plus the homelab network audit, 31 documented Windows 11
+> this project plus the homelab network audit, 41 documented Windows 11
 > administration walkthroughs, and CIS-27 cybersecurity lab work.
 
 ## Features
