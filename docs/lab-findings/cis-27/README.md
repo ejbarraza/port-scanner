@@ -72,3 +72,41 @@ and message digests, obfuscation.
 | 5.5.4 | pfSense: OpenVPN server, CA + server certificate, VPN users |
 | 5.5.5 | IPSec VPN client configuration and connection |
 | 5.7 | Cisco switch: new user account, default account, save config |
+| 5.9.7 | Switch port security: shut down unused ports, port-security settings for used ports |
+| 5.9.8 | Switch management access: access profile restricting management access, profile rules, active profile, save to startup config |
+| 5.9.9 | MAC-based ACL: GameConsoles ACL, MAC access-control entries, bind to interfaces, save config |
+| 5.9.10 | Practice questions: switch security |
+
+## Chapter 6 Labs
+
+| Lab | Covered |
+| --- | --- |
+| 6.1.4 | Practice questions: physical security (access control, deterrence) |
+| 6.2.7 | Practice questions: wireless security (war driving and related concepts) |
+| 6.3.4 | pfSense Snort: Snort rules, OpenAppID detectors, rules-update and general settings, WAN interface settings |
+| 6.3.5 | Practice questions: IDS/IPS tuning and false positives |
+| 6.4.4 | Practice questions: vulnerability-scanning tools (packet capture, port scanning, vulnerability assessment) |
+| 6.5.4 | Wireshark ARP capture: identify responding and duplicate responding devices |
+| 6.5.6 | Ettercap: host scan, target selection, DNS spoofing and redirection |
+| 6.5.8 | Wireshark SYN/SYN-ACK analysis: identify a distributed denial-of-service SYN flood |
+| 6.5.12 | Practice questions: malware and attack techniques (macro-based attacks and related concepts) |
+| 6.6.4 | Password cracking: rainbow tables (build, sort, crack), MD5/SHA1 hashes, password-policy check |
+| 6.6.7 | Password cracking: John the Ripper, Linux system password, password-protected archive |
+| 6.6.8 | Practice questions: social engineering (user manipulation and related techniques) |
+
+## Chapter 7 Labs
+
+| Lab | Covered |
+| --- | --- |
+| 7.1.8 | Practice questions: risk and legacy systems (unsupported systems, patching) |
+| 7.2.6 | Vulnerability scan: single-host scan, vulnerability identification and remediation options |
+| 7.2.7 | Vulnerability scan: FTP host, vulnerability count and affected services |
+| 7.2.8 | Vulnerability scan: TLS vulnerabilities, remediation by disabling older TLS versions |
+| 7.2.9 | Vulnerability remediation: Windows hardening — administrator/guest/user accounts, firewall on all profiles, remove a folder share |
+| 7.2.10 | Vulnerability scan: IP-range scan, Linux host discovery, vulnerabilities common to the range |
+| 7.2.11 | Security-policy hardening: password policy, account lockout counter, event-log retention, service disabling |
+| 7.2.12 | Practice questions: vulnerability scanning |
+
+Note: the October 21–29, 2026 reports behind Chapters 5–7 are summarized
+here as content only, as before — the raw reports are not published,
+because they contain lab credentials, session links, and results.
