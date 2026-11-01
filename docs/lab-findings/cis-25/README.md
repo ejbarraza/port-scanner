@@ -41,3 +41,22 @@ concepts.
 | `VHD_Created.pdf` | Microsoft Virtual Disk properties, Disk 1 Unknown / Not Initialized |
 | `View_Active_Network_Connection-2.pdf` | Command Prompt `netstat` active connections |
 | `View_Wi-Fi_Networks.pdf` | `netsh wlan show networks` (Wireless AutoConfig not running) |
+
+## October 27, 2026 — Windows troubleshooting tools
+
+Same CIS25VM3 Windows 11 VM. Screenshot-documented walkthroughs of the
+built-in troubleshooting tools (10 files, bringing this folder to 41 PDFs).
+No grades or personal information in these screenshots.
+
+| File | Shows |
+| --- | --- |
+| `Disk_Cleanup.pdf` | Disk Cleanup for (C:) — 626 MB reclaimable, 14.4 MB selected (Temporary Internet Files, Delivery Optimization Files, Temporary files) |
+| `Disk_Management-2.pdf` | Disk Management — Disk 0 (79.98 GB), (C:) 78.89 GB NTFS (BitLocker Encrypted), 43.05 GB free |
+| `Event_Viewer.pdf` | Event Viewer, System log (2,262 events, 10/27/2026) — Virtual Disk Service, Event 4 |
+| `Performance_Tab.pdf` | Task Manager → Performance, CPU Intel Core i7-10700 @ 2.90 GHz (4%), Memory 3.0/8.0 GB (38%), uptime 0:00:19:31 |
+| `Resource_Monitor.pdf` | Resource Monitor Overview — CPU, Memory, Disk, and Network sections (10/27/2026) |
+| `Services_Console.pdf` | Services (Local) console — service name, description, status, startup type |
+| `Startup_Applications.pdf` | Task Manager → Startup apps — Copilot/OneDrive/ShareX enabled, Teams/Terminal/Xbox disabled |
+| `System_Configuration.pdf` | System Configuration (msconfig) → Boot — Windows 11 (C:\WINDOWS) current OS, default OS, 30-second timeout |
+| `Task_Manager_Processes.pdf` | Task Manager → Processes — Apps (2), Background processes (45) |
+| `Windows_Troubleshooting_Tools_Summary.pdf` | Doc.txt definitions — Task Manager, Event Viewer, Resource Monitor, Disk Cleanup, msconfig |
